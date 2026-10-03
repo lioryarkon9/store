@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+/* A modal <dialog> doesn't lock page scroll on its own. */
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+
+@keyframes cart-bump {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .cart-bump {
+    animation: cart-bump 300ms ease-out;
+  }
+}
